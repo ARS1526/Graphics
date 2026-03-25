@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Extra.hpp"
 
 int main()
 {
@@ -15,10 +16,35 @@ int main()
                 Exit = true;
                 break;
             case 1:
-                std::cout<<"1\n";
+                std::cout<<"1.Basic\n2.Matte\n0.Back\n";
+                std::cin>>Function;
+                switch (Function)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        Palette(0.2);
+                        break;
+                    case 2:
+                        Palette(0.5);
+                        break;
+                }
                 break;
             case 2:
-                std::cout<<"2\n";
+                std::cout<<"First color in RGB\nR: ";
+                int R,G,B,R1,G1,B1;
+                std::cin>>R;
+                std::cout<<"G: ";
+                std::cin>>G;
+                std::cout<<"B: ";
+                std::cin>>B;
+                std::cout<<"Second color in RGB\nR: ";
+                std::cin>>R1;
+                std::cout<<"G: ";
+                std::cin>>G1;
+                std::cout<<"B: ";
+                std::cin>>B1;
+                Gradient(R,G,B,R1,G1,B1);
                 break;
             
             default:

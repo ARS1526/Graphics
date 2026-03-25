@@ -4,10 +4,16 @@ ARGS:=""
 standard: OFile
 	$(CPPFLAGG) src/*.o -Iinclude/ -o bin/DebugMain.exe
 
-main: src/Main.cpp 
+Main: src/Main.cpp 
 	$(CPPFLAGG) -c src/Main.cpp -Iinclude/ -o src/Main.o
 
-OFile: main
+Palette: src/Palette.cpp 
+	$(CPPFLAGG) -c src/Palette.cpp -Iinclude/ -o src/Palette.o
+
+Gradient: src/Gradient.cpp 
+	$(CPPFLAGG) -c src/Gradient.cpp -Iinclude/ -o src/Gradient.o
+
+OFile: Main Palette Gradient
 
 
 
