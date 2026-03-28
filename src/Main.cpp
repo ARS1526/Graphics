@@ -8,9 +8,9 @@ int main()
     while(Exit != true)
     {
         std::cout<<"Select a function:\n";
-        std::cout<<"1.Palette\n2.Gradient\n3.Silver lining\n4.Average two\n5.Chaos\n0.Exit\n";
+        std::cout<<"1.Palette\n2.Gradient\n3.Silver lining\n4.Average two\n5.Chaos\n6.Fill\n7.Square\n0.Exit\n";
         std::cin>>Function;
-        int R,G,B,R1,G1,B1;
+        int R,G,B,R1,G1,B1,a;
         switch (Function)
             {
             case 0:
@@ -45,8 +45,12 @@ int main()
                 std::cin>>G1;
                 std::cout<<"B: ";
                 std::cin>>B1;
-                Gradient(R,G,B,R1,G1,B1);
-                std::cout<<"Texture created\n";
+                if(((R || G || B || R1 || G1 || B1) < 0) || ((R || G || B || R1 || G1 || B1) > 255))std::cout<<"Error color not possible\n";
+                else 
+                {
+                    Gradient(R,G,B,R1,G1,B1);
+                    std::cout<<"Texture created\n";
+                }
                 break;
             case 3:
                 SilverLining();
@@ -65,13 +69,52 @@ int main()
                 std::cin>>G1;
                 std::cout<<"B: ";
                 std::cin>>B1;
-                AverageTwo(R,G,B,R1,G1,B1);
-                std::cout<<"Texture created\n";
+                if(((R || G || B || R1 || G1 || B1) < 0) || ((R || G || B || R1 || G1 || B1) > 255))std::cout<<"Error color not possible\n";
+                else 
+                {
+                    AverageTwo(R,G,B,R1,G1,B1);
+                    std::cout<<"Texture created\n";
+                }
                 break;
             case 5:
                 Chaos();
                 std::cout<<"Texture created\n";
                 break;
+            case 6:
+                std::cout<<"Color in RGB\nR: ";
+                std::cin>>R;
+                std::cout<<"G: ";
+                std::cin>>G;
+                std::cout<<"B: ";
+                std::cin>>B;
+                if(((R || G || B) < 0) || ((R || G || B) > 255))std::cout<<"Error color not possible\n";
+                else 
+                {
+                    Fill(R,G,B);
+                    std::cout<<"Texture created\n";
+                }
+                break;
+            case 7:
+                std::cout<<"Square color in RGB\nR: ";
+                std::cin>>R;
+                std::cout<<"G: ";
+                std::cin>>G;
+                std::cout<<"B: ";
+                std::cin>>B;
+                std::cout<<"Other color in RGB\nR: ";
+                std::cin>>R1;
+                std::cout<<"G: ";
+                std::cin>>G1;
+                std::cout<<"B: ";
+                std::cin>>B1;
+                std::cout<<"Square st\na: ";
+                std::cin>>a;
+                if(((R || G || B || R1 || G1 || B1 || a) < 0) || ((R || G || B || R1 || G1 || B1 || a) > 255))std::cout<<"Error args not possible\n";
+                else 
+                {
+                    Square(R,G,B,R1,G1,B1,a);
+                    std::cout<<"Texture created\n";
+                }
             default:
                 break;
             }

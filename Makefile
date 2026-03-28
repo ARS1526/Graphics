@@ -22,7 +22,13 @@ AverageTwo: src/AverageTwo.cpp
 Chaos: src/Chaos.cpp 
 	$(CPPFLAGG) -c src/Chaos.cpp -Iinclude/ -o src/Chaos.o
 
-OFile: Main Palette Gradient SilverLining AverageTwo Chaos
+Fill: src/Fill.cpp 
+	$(CPPFLAGG) -c src/Fill.cpp -Iinclude/ -o src/Fill.o
+
+Square: src/Square.cpp 
+	$(CPPFLAGG) -c src/Square.cpp -Iinclude/ -o src/Square.o
+
+OFile: Main Palette Gradient SilverLining AverageTwo Chaos Fill Square
 
 
 

@@ -2,12 +2,14 @@
 #define _EXTRA_ 
 
 #define VERSION_MAJOR 0
-#define VERSION_MINOR 3
+#define VERSION_MINOR 4
 
 int Palette(double Blue);
 int Gradient(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb);
 int AverageTwo(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb);
+int Square(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb, int a);
 int SilverLining();
 int Chaos();
+int Fill(double R, double G, double B);
 
 #endif // _EXTRA_
