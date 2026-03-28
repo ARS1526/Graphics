@@ -8,8 +8,9 @@ int main()
     while(Exit != true)
     {
         std::cout<<"Select a function:\n";
-        std::cout<<"1.Palette\n2.Gradient\n0.Exit\n";
+        std::cout<<"1.Palette\n2.Gradient\n3.Silver lining\n4.Average two\n5.Chaos\n0.Exit\n";
         std::cin>>Function;
+        int R,G,B,R1,G1,B1;
         switch (Function)
             {
             case 0:
@@ -29,10 +30,10 @@ int main()
                         Palette(0.5);
                         break;
                 }
+                std::cout<<"Texture created\n";
                 break;
             case 2:
                 std::cout<<"First color in RGB\nR: ";
-                int R,G,B,R1,G1,B1;
                 std::cin>>R;
                 std::cout<<"G: ";
                 std::cin>>G;
@@ -45,8 +46,32 @@ int main()
                 std::cout<<"B: ";
                 std::cin>>B1;
                 Gradient(R,G,B,R1,G1,B1);
+                std::cout<<"Texture created\n";
                 break;
-            
+            case 3:
+                SilverLining();
+                std::cout<<"Texture created\n";
+                break;
+            case 4:
+                std::cout<<"First color in RGB\nR: ";
+                std::cin>>R;
+                std::cout<<"G: ";
+                std::cin>>G;
+                std::cout<<"B: ";
+                std::cin>>B;
+                std::cout<<"Second color in RGB\nR: ";
+                std::cin>>R1;
+                std::cout<<"G: ";
+                std::cin>>G1;
+                std::cout<<"B: ";
+                std::cin>>B1;
+                AverageTwo(R,G,B,R1,G1,B1);
+                std::cout<<"Texture created\n";
+                break;
+            case 5:
+                Chaos();
+                std::cout<<"Texture created\n";
+                break;
             default:
                 break;
             }

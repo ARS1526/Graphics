@@ -13,7 +13,16 @@ Palette: src/Palette.cpp
 Gradient: src/Gradient.cpp 
 	$(CPPFLAGG) -c src/Gradient.cpp -Iinclude/ -o src/Gradient.o
 
-OFile: Main Palette Gradient
+SilverLining: src/SilverLining.cpp 
+	$(CPPFLAGG) -c src/SilverLining.cpp -Iinclude/ -o src/SilverLining.o
+
+AverageTwo: src/AverageTwo.cpp 
+	$(CPPFLAGG) -c src/AverageTwo.cpp -Iinclude/ -o src/AverageTwo.o
+
+Chaos: src/Chaos.cpp 
+	$(CPPFLAGG) -c src/Chaos.cpp -Iinclude/ -o src/Chaos.o
+
+OFile: Main Palette Gradient SilverLining AverageTwo Chaos
 
 
 

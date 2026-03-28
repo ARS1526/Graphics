@@ -3,17 +3,17 @@
 #include <cmath>
 #include "Extra.hpp"
 
-int Gradient(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb)
+int SilverLining()
 {
-    std::ofstream fout("./data/texture/Gradient.ppm");
+    std::ofstream fout("./data/texture/SilverLining.ppm");
 
-    auto k1r = Fr/255;
-    auto k1g = Fg/255;
-    auto k1b = Fb/255;
+    auto k1r = 255/255;
+    auto k1g = 255/255;
+    auto k1b = 255/255;
     
-    auto k2r = Tr/255;
-    auto k2g = Tg/255;
-    auto k2b = Tb/255;
+    auto k2r = 255/255;
+    auto k2g = 255/255;
+    auto k2b = 255/255;
 
     const int IMAGE_WIDHT = 256, IMAGE_HEIGHT = 256;
     fout<<"P3\n"<<IMAGE_WIDHT<<' '<<IMAGE_HEIGHT<<"\n255\n";
@@ -30,7 +30,6 @@ int Gradient(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb)
             auto G2 = round(l*k2g); 
             auto B2 = round(l*k2b);
 
-            /*
             double kr;
             double kg;
             double kb;
@@ -66,11 +65,10 @@ int Gradient(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb)
                 kb=B2/double(255);
                 kb*=2;
             }
-            */
 
-            int ir = (R1+R2);
-            int ig = (G1+G2);
-            int ib = (B1+B2);
+            int ir = (R1+R2)*kr;
+            int ig = (G1+G2)*kg;
+            int ib = (B1+B2)*kb;
 
             fout<<ir<<' '<<ig<<' '<<ib<<"\n";
             l--;
