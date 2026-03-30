@@ -19,13 +19,13 @@ int Square(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb, int
     {
         for(int i = 0; i < IMAGE_HEIGHT; i++)
         {
-            if(i < Ot)
+            if(j > 256-Ot || i > 256-Ot)
             {
                 ir = Fr;
                 ig = Fg;
                 ib = Fb;
             }
-            else if(i > 256-Ot)
+            else if(j < Ot || i < Ot)
             {
                 ir = Fr;
                 ig = Fg;
@@ -38,24 +38,6 @@ int Square(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb, int
                 ib = Tb;
             }
             
-            if(j < Ot)
-            {
-                ir = Fr;
-                ig = Fg;
-                ib = Fb;
-            }
-            else if(j > 256-Ot)
-            {
-                ir = Fr;
-                ig = Fg;
-                ib = Fb;
-            }
-            else
-            {
-                ir = Tr;
-                ig = Tg;
-                ib = Tb;
-            }
             fout<<ir<<' '<<ig<<' '<<ib<<"\n";
         }
     }

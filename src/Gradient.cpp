@@ -7,13 +7,13 @@ int Gradient(double Fr, double Fg, double Fb, double Tr, double Tg, double Tb)
 {
     std::ofstream fout("./data/texture/Gradient.ppm");
 
-    auto k1r = Fr/255;
-    auto k1g = Fg/255;
-    auto k1b = Fb/255;
+    auto k1r = Tr/255;
+    auto k1g = Tg/255;
+    auto k1b = Tb/255;
     
-    auto k2r = Tr/255;
-    auto k2g = Tg/255;
-    auto k2b = Tb/255;
+    auto k2r = Fr/255;
+    auto k2g = Fg/255;
+    auto k2b = Fb/255;
 
     const int IMAGE_WIDHT = 256, IMAGE_HEIGHT = 256;
     fout<<"P3\n"<<IMAGE_WIDHT<<' '<<IMAGE_HEIGHT<<"\n255\n";
